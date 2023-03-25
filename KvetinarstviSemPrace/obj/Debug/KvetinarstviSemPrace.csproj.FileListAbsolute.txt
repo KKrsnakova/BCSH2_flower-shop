@@ -1,0 +1,67 @@
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe.config
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.pdb
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Properties.Resources.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.exe
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.pdb
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.HlavniOkno.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKvetiny.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejKvetinu.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.dll
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.xml
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CopyComplete
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKytice.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormObjednavky.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejZakaznika.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormZakaznici.resources
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormProdej.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe.config
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.pdb
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.dll
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.xml
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.AssemblyReference.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.SuggestedBindingRedirects.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKvetiny.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKytice.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormObjednavky.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejKvetinu.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejZakaznika.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormProdej.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormZakaznici.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.HlavniOkno.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Properties.Resources.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.GenerateResource.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CoreCompileInputs.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CopyComplete
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.exe
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.pdb
+C:\Users\pc\source\repos\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejKytici.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe.config
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.exe
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\KvetinarstviSemPrace.pdb
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.dll
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\bin\Debug\LiteDB.xml
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.AssemblyReference.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.SuggestedBindingRedirects.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKvetiny.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormKytice.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormNovaObjednavka.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormObjednavky.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejKvetinu.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejKytici.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormPridejZakaznika.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormProdej.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormZakaznici.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.HlavniOkno.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Properties.Resources.resources
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.GenerateResource.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CoreCompileInputs.cache
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.csproj.CopyComplete
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.exe
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.pdb
+C:\Users\ntb2\OneDrive - Univerzita Pardubice\C#\SemPrace\KvetinarstviSemPrace\KvetinarstviSemPrace\obj\Debug\KvetinarstviSemPrace.Forms.FormZbozi.resources
