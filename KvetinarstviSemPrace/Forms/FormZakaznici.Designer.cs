@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lvZakaznici = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.jmeno = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.prijmeni = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.adresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +45,7 @@
             // lvZakaznici
             // 
             this.lvZakaznici.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.jmeno,
             this.prijmeni,
             this.adresa,
@@ -57,7 +59,11 @@
             this.lvZakaznici.TabIndex = 2;
             this.lvZakaznici.UseCompatibleStateImageBehavior = false;
             this.lvZakaznici.View = System.Windows.Forms.View.Details;
-            this.lvZakaznici.SelectedIndexChanged += new System.EventHandler(this.LvZakaznici_SelectedIndexChanged);
+            this.lvZakaznici.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LvZakaznici_ColumnClick);
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
             // 
             // jmeno
             // 
@@ -112,6 +118,7 @@
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnOdebrat
             // 
@@ -175,5 +182,6 @@
         private System.Windows.Forms.Button btnOdebrat;
         private System.Windows.Forms.Button btnPridet;
         private System.Windows.Forms.ColumnHeader email;
+        private System.Windows.Forms.ColumnHeader id;
     }
 }

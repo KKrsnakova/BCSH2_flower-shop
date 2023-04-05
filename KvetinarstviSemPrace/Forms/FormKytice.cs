@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KvetinarstviSemPrace.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace KvetinarstviSemPrace.Forms
             {
                 if (kytice is Kytice item)
                 {
-                    string[] zaznam = { item.Nazev, "" + item.PocetKvetin, "" + item.Cena, "" + item.Popis };
+                    string[] zaznam = { item.Nazev, item.PocetKvetin + " Ks", item.Cena + " Kč", "" + item.Popis };
                     lv.Items.Add(item.Id + "").SubItems.AddRange(zaznam);
 
 
@@ -78,6 +79,21 @@ namespace KvetinarstviSemPrace.Forms
             {
                 MessageBox.Show("Není vybráno", "Chyba");
             }
+        }
+
+        private void lvKytice_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            ListView lv = sender as ListView;
+            if (lv.Sorting == SortOrder.Ascending)
+            {
+                lv.Sorting = SortOrder.Descending;
+            }
+            else
+            {
+                lv.Sorting = SortOrder.Ascending;
+            }
+            lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
+            lv.Sort();
         }
     }
 }

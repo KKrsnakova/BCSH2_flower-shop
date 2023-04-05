@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.lvZbozi = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.specifikace = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cena = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelMain = new System.Windows.Forms.Panel();
@@ -39,27 +41,39 @@
             // lvZbozi
             // 
             this.lvZbozi.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.id,
             this.nazev,
+            this.specifikace,
             this.cena,
             this.popis});
             this.lvZbozi.HideSelection = false;
-            this.lvZbozi.Location = new System.Drawing.Point(47, 102);
+            this.lvZbozi.Location = new System.Drawing.Point(46, 102);
             this.lvZbozi.Name = "lvZbozi";
             this.lvZbozi.Size = new System.Drawing.Size(684, 364);
             this.lvZbozi.TabIndex = 0;
             this.lvZbozi.UseCompatibleStateImageBehavior = false;
             this.lvZbozi.View = System.Windows.Forms.View.Details;
+            this.lvZbozi.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LvZbozi_ColumnClick);
             this.lvZbozi.SelectedIndexChanged += new System.EventHandler(this.LvZbozi_SelectedIndexChanged);
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
             // 
             // nazev
             // 
             this.nazev.Text = "Název";
             this.nazev.Width = 164;
             // 
+            // specifikace
+            // 
+            this.specifikace.Text = "Specifikace";
+            this.specifikace.Width = 123;
+            // 
             // cena
             // 
             this.cena.Text = "Cena";
-            this.cena.Width = 81;
+            this.cena.Width = 88;
             // 
             // popis
             // 
@@ -110,5 +124,7 @@
         private System.Windows.Forms.ColumnHeader popis;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader specifikace;
     }
 }

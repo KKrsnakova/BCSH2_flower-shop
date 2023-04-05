@@ -92,9 +92,9 @@
             this.lbPocetKusu.AutoSize = true;
             this.lbPocetKusu.Location = new System.Drawing.Point(40, 126);
             this.lbPocetKusu.Name = "lbPocetKusu";
-            this.lbPocetKusu.Size = new System.Drawing.Size(64, 13);
+            this.lbPocetKusu.Size = new System.Drawing.Size(33, 13);
             this.lbPocetKusu.TabIndex = 7;
-            this.lbPocetKusu.Text = "Počet kusů:";
+            this.lbPocetKusu.Text = "Druh:";
             // 
             // lbCena
             // 

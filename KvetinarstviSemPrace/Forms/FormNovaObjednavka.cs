@@ -14,20 +14,60 @@ namespace KvetinarstviSemPrace.Forms
 {
     public partial class FormNovaObjednavka : Form
     {
-        int? indexZakaznika;
         bool pridano;
-        Objednavka objednavka;
+        bool editace = false;
+        readonly Objednavka objednavka;
+        Zakaznik zakaznik;
         int cena = 0;
-        public FormNovaObjednavka(int? index)
+        Zakaznik zakaznikObjednavky;
+        public FormNovaObjednavka(Objednavka obj)
         {
+
             InitializeComponent();
             pridano = false;
-            indexZakaznika = index;
             cbJmenoPrijmeni.DataSource = HlavniOkno.zaznamy.DejSeznamZakaznici();
 
-            Zakaznik zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
-            objednavka = new Objednavka(HlavniOkno.zaznamy.DejIdObjednavky(), zakaznik.Id, DateTime.Now);
-            HlavniOkno.zaznamy.PridejObjednavku(objednavka);
+            zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
+            if (obj == null)
+            {
+                objednavka = new Objednavka(HlavniOkno.zaznamy.DejIdObjednavky(), zakaznik.Id, DateTime.Now);
+            }
+            else
+            {
+                btnPridej.Text = "Uložit";
+                editace = true;
+                objednavka = obj;
+
+                foreach (var item in HlavniOkno.zaznamy.DejSeznamZakaznici())
+                {
+                    if (obj.ZakaznikID.Equals(item.Id))
+                    {
+                        zakaznikObjednavky = item;
+
+                    }
+                }
+                ReadOnlyPrvky();
+
+                tbJmenoPrijmeni.Text = zakaznikObjednavky.Prijemni + " " + zakaznikObjednavky.Jmeno;
+                tbAdresa.Text = zakaznikObjednavky.Adresa;
+                tbEmail.Text = zakaznikObjednavky.Email;
+                tbTelCislo.Text = zakaznikObjednavky.TelCislo.ToString();
+
+                Nacti();
+
+                tbCena.Text = objednavka.CenaObjednavky.ToString();
+            }
+
+        }
+
+        private void ReadOnlyPrvky()
+        {
+            cbJmenoPrijmeni.Visible = false;
+            tbTelCislo.ReadOnly = true;
+            tbJmenoPrijmeni.ReadOnly = true;
+            tbEmail.ReadOnly = true;
+            tbAdresa.ReadOnly = true;
+            tbCena.ReadOnly = true;
         }
 
         private void BtnPridatDoSeznamu_Click(object sender, EventArgs e)
@@ -36,11 +76,10 @@ namespace KvetinarstviSemPrace.Forms
             Form formZbozi = new FormZbozi(objednavka);
             formZbozi.ShowDialog();
             lvObjednavka.Items.Clear();
-            foreach (Zbozi item in objednavka.SeznamZbozi)
-            {
-                lvObjednavka.Items.Add(item.Nazev);
-            }
-           cena = CenaObjednavky(objednavka);
+
+            Nacti();
+
+            cena = CenaObjednavky(objednavka);
             tbCena.Text = cena.ToString();
 
         }
@@ -48,23 +87,37 @@ namespace KvetinarstviSemPrace.Forms
         private void CbJmenoPrijmeni_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            Zakaznik zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
+            zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
             tbJmenoPrijmeni.Text = zakaznik.Jmeno + " " + zakaznik.Prijemni;
             tbAdresa.Text = zakaznik.Adresa;
             tbTelCislo.Text = zakaznik.TelCislo.ToString();
             tbEmail.Text = zakaznik.Email.ToString();
+
         }
 
         private void BtnPridej_Click(object sender, EventArgs e)
         {
-            if (pridano)
+            if (editace)
             {
+                float cena = CenaObjednavky(objednavka);
                 objednavka.CenaObjednavky = cena;
+                HlavniOkno.zaznamy.EditObjednavka(objednavka.Id, objednavka);
                 Close();
             }
             else
             {
-                MessageBox.Show("Chyba", "Nejsou přidané žádné položky");
+                if (pridano)
+                {
+                    Zakaznik zk = cbJmenoPrijmeni.SelectedItem as Zakaznik;
+                    objednavka.CenaObjednavky = cena;
+                    objednavka.ZakaznikID = zk.Id;
+                    HlavniOkno.zaznamy.PridejObjednavku(objednavka);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Chyba", "Nejsou přidané žádné položky");
+                }
             }
         }
 
@@ -76,6 +129,31 @@ namespace KvetinarstviSemPrace.Forms
                 cena += item.Cena;
             }
             return cena;
+        }
+
+        private void btnOdeberZeSeznamu_Click(object sender, EventArgs e)
+        {
+            if (lvObjednavka.SelectedItems.Count > 0)
+            {
+                int selectedId = int.Parse(lvObjednavka.SelectedItems[0].SubItems[0].Text);
+                Zbozi zb = objednavka.SeznamZbozi.FirstOrDefault(objekt => objekt.Id == selectedId);
+
+                objednavka.SeznamZbozi.Remove(zb);
+                zb.Id = HlavniOkno.zaznamy.DejIdZbozi();
+                HlavniOkno.zaznamy.PridejZbozi(zb);
+                Nacti();
+            }
+        }
+
+        private void Nacti()
+        {
+            lvObjednavka.Items.Clear();
+            foreach (var item in objednavka.SeznamZbozi)
+            {
+                string[] zaznam = { item.Nazev, item.Cena + " Kč" };
+                lvObjednavka.Items.Add(item.Id.ToString()).SubItems.AddRange(zaznam);
+            }
+            tbCena.Text = objednavka.CenaObjednavky.ToString();
         }
     }
 }

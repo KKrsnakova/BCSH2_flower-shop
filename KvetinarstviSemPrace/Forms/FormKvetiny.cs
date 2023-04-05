@@ -41,7 +41,6 @@ namespace KvetinarstviSemPrace.Forms
         {
             if (lvKvetiny.SelectedItems.Count > 0)
             {
-                //int odebrat = lvKvetiny.Items.IndexOf(lvKvetiny.SelectedItems[0]);
                 selectedId = int.Parse(lvKvetiny.SelectedItems[0].SubItems[0].Text);
                 Zbozi zbozi = HlavniOkno.zaznamy.DejSeznamZbozi().FirstOrDefault(objekt => objekt.Id == selectedId);
 
@@ -62,7 +61,7 @@ namespace KvetinarstviSemPrace.Forms
             {
                 if (kvetina is Kvetina item)
                 {
-                    string[] zaznam = { item.Nazev, DruhyKvetinInfo.DejNazevDruhu(item.Druh), item.Cena +"", "" + item.Popis };
+                    string[] zaznam = { item.Nazev, DruhyKvetinInfo.DejNazevDruhu(item.Druh), item.Cena + " Kč", "" + item.Popis };
                     lv.Items.Add(item.Id + "").SubItems.AddRange(zaznam);
                 }
 
@@ -74,9 +73,7 @@ namespace KvetinarstviSemPrace.Forms
             if (lvKvetiny.SelectedItems.Count > 0)
             {
                 selectedId = int.Parse(lvKvetiny.SelectedItems[0].SubItems[0].Text);
-                MessageBox.Show(selectedId + "___", "Není vybráno");
                 Zbozi zbozi = HlavniOkno.zaznamy.DejSeznamZbozi().FirstOrDefault(objekt => objekt.Id == selectedId);
-                MessageBox.Show(zbozi.Nazev, "áno");
                 Form editForm = new FormPridejKvetinu(zbozi);
                 editForm.ShowDialog();
                 lvKvetiny.Items.Clear();
@@ -87,6 +84,32 @@ namespace KvetinarstviSemPrace.Forms
                 MessageBox.Show("Chyba", "Není vybráno");
             }
         }
-    }
 
+        private void lvKvetiny_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+
+            
+                // Získáme ListView
+                ListView lv = sender as ListView;
+
+                // Změníme způsob řazení podle hodnot v prvním sloupci
+                if (lv.Sorting == SortOrder.Ascending)
+                {
+                    lv.Sorting = SortOrder.Descending;
+                }
+                else
+                {
+                    lv.Sorting = SortOrder.Ascending;
+                }
+
+                // Nastavíme sloupec, podle kterého se bude řadit
+                lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
+
+                // Zavoláme metodu Sort, která se postará o samotné řazení
+                lv.Sort();
+
+            
+        }
+
+    }
 }

@@ -11,9 +11,12 @@ namespace KvetinarstviSemPrace
     {
         public int Id{ get; set; }
         public int ZakaznikID { get; set; }
-        public int CenaObjednavky { get; set; }
+        public float CenaObjednavky { get; set; }
         public DateTime DatumVytvoreni { get; set; }
         public ObservableCollection<Zbozi> SeznamZbozi { get; set; }
+
+        public bool Splneno { get; set; }
+        public DateTime? DatumSplneni { get; set; }
 
         public Objednavka(int id, int zakaznikID, DateTime datumVytvoreni)
         {
@@ -22,6 +25,8 @@ namespace KvetinarstviSemPrace
             CenaObjednavky = 0;
             SeznamZbozi = new ObservableCollection<Zbozi>();
             DatumVytvoreni = datumVytvoreni;
+            Splneno = false;
+            DatumSplneni = null;
         }
 
         public void PridejZbozi(Zbozi zbozi)

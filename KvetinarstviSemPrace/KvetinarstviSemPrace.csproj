@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LiteDB, Version=5.0.11.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiteDB.5.0.11\lib\net45\LiteDB.dll</HintPath>
+    <Reference Include="LiteDB, Version=5.0.16.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.5.0.16\lib\net45\LiteDB.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\DruhyKvetin.cs" />
+    <Compile Include="Class\ListViewItemComparer.cs" />
     <Compile Include="Forms\FormKvetiny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,12 +94,6 @@
     </Compile>
     <Compile Include="Forms\FormPridejZakaznika.Designer.cs">
       <DependentUpon>FormPridejZakaznika.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormProdej.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormProdej.Designer.cs">
-      <DependentUpon>FormProdej.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormZakaznici.cs">
       <SubType>Form</SubType>
@@ -156,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPridejZakaznika.resx">
       <DependentUpon>FormPridejZakaznika.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormProdej.resx">
-      <DependentUpon>FormProdej.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormZakaznici.resx">
       <DependentUpon>FormZakaznici.cs</DependentUpon>

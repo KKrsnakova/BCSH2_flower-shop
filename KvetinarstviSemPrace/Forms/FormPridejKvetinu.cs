@@ -54,7 +54,6 @@ namespace KvetinarstviSemPrace.Forms
                 {
                     MessageBox.Show("Chybně zadáno", "Chyba");
                 }
-                Close();
             }
             else
             {

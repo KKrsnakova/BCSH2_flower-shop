@@ -156,7 +156,6 @@
             this.btnProdej.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProdej.UseVisualStyleBackColor = true;
             this.btnProdej.Visible = false;
-            this.btnProdej.Click += new System.EventHandler(this.BtnProdej_Click);
             // 
             // btnZakaznici
             // 

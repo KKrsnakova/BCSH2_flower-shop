@@ -38,11 +38,13 @@ namespace KvetinarstviSemPrace
             seznamZbozi.Add(zbozi);
         }
 
+
+
         // vrat seznam
         public ObservableCollection<Zakaznik> DejSeznamZakaznici() { return seznamZakaznici; }
         public ObservableCollection<Objednavka> DejSeznamObjednavek() { return seznamObjednavek; }
         public ObservableCollection<Zbozi> DejSeznamZbozi() { return seznamZbozi; }
-        
+
 
 
         // dej další id
@@ -98,6 +100,8 @@ namespace KvetinarstviSemPrace
             return pocet;
         }
 
+
+        //Odeber
         public void OdeberZakaznika(int id)
         {
             seznamZakaznici.RemoveAt(id);
@@ -107,8 +111,13 @@ namespace KvetinarstviSemPrace
             seznamZbozi.Remove(zbozi);
         }
 
+        public void OdeberObjednavku(Objednavka objednavka)
+        {
+            seznamObjednavek.Remove(objednavka);
+        }
+
         //nastav seznam
-      
+
         public void SetSeznamZakaznici(ObservableCollection<Zakaznik> list)
         {
             seznamZakaznici = list;
@@ -140,20 +149,44 @@ namespace KvetinarstviSemPrace
         }
 
         //edituj 
-      
+
 
         public void EditZbozi(int id, Zbozi zbozi)
         {
             for (int i = 0; i < seznamZbozi.Count; i++)
             {
-                MessageBox.Show("Chyba", seznamZbozi[i].Id+"");
+                MessageBox.Show("Chyba", seznamZbozi[i].Id + "");
                 if (seznamZbozi[i].Equals(id))
                 {
-                    MessageBox.Show("v ifu editacš " +id);
+                    MessageBox.Show("v ifu editacš " + id);
                     seznamZbozi[i] = zbozi;
                 }
             }
-            
+
+        }
+
+        public void EditObjednavka(int id, Objednavka objednavka)
+        {
+            for (int i = 0; i < seznamObjednavek.Count; i++)
+            {
+                if (seznamObjednavek[i].Equals(id))
+                {
+                    seznamObjednavek[i] = objednavka;
+                }
+            }
+
+        }
+
+        public void EditZakaznika(int id, Zakaznik zakaznik)
+        {
+            for (int i = 0; i < seznamZakaznici.Count; i++)
+            {
+                if (seznamZakaznici[i].Equals(id))
+                {
+                    seznamZakaznici[i] = zakaznik;
+                }
+            }
+
         }
 
         //dejPodleID
@@ -166,7 +199,7 @@ namespace KvetinarstviSemPrace
                 {
                     vratZakaznika = zakaznik;
                 }
-                
+
             }
             return vratZakaznika;
         }

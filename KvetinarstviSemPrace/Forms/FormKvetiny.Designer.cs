@@ -123,6 +123,7 @@
             this.lvKvetiny.TabIndex = 1;
             this.lvKvetiny.UseCompatibleStateImageBehavior = false;
             this.lvKvetiny.View = System.Windows.Forms.View.Details;
+            this.lvKvetiny.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvKvetiny_ColumnClick);
             // 
             // id
             // 

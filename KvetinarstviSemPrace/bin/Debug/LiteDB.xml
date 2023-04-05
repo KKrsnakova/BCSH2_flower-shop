@@ -987,7 +987,7 @@
         </member>
         <member name="M:LiteDB.LiteDatabase.GetCollection``1(System.String,LiteDB.BsonAutoId)">
             <summary>
-            Get a collection using a entity class as strong typed document. If collection does not exits, create a new one.
+            Get a collection using an entity class as strong typed document. If collection does not exist, create a new one.
             </summary>
             <param name="name">Collection name (case insensitive)</param>
             <param name="autoId">Define autoId data type (when object contains no id field)</param>
@@ -1004,7 +1004,7 @@
         </member>
         <member name="M:LiteDB.LiteDatabase.GetCollection(System.String,LiteDB.BsonAutoId)">
             <summary>
-            Get a collection using a generic BsonDocument. If collection does not exits, create a new one.
+            Get a collection using a generic BsonDocument. If collection does not exist, create a new one.
             </summary>
             <param name="name">Collection name (case insensitive)</param>
             <param name="autoId">Define autoId data type (when document contains no _id field)</param>
@@ -2026,7 +2026,7 @@
         </member>
         <member name="M:LiteDB.SqlParser.ParseCreate">
             <summary>
-            CREATE [ UNQIUE ] INDEX {indexName} ON {collection} ({indexExpr})
+            CREATE [ UNIQUE ] INDEX {indexName} ON {collection} ({indexExpr})
             </summary>
         </member>
         <member name="M:LiteDB.SqlParser.ParseDelete">
@@ -3928,9 +3928,10 @@
             Write pages inside file origin using async queue - WORKS ONLY FOR LOG FILE - returns how many pages are inside "pages"
             </summary>
         </member>
-        <member name="M:LiteDB.Engine.DiskService.GetLength(LiteDB.Engine.FileOrigin)">
+        <member name="M:LiteDB.Engine.DiskService.GetVirtualLength(LiteDB.Engine.FileOrigin)">
             <summary>
-            Get virtual file length: real file can be small but async thread can still writing on disk
+            Get virtual file length: real file can be small because async thread can still writing on disk
+            and incrementing file size (Log file)
             </summary>
         </member>
         <member name="M:LiteDB.Engine.DiskService.ChangePassword(System.String,LiteDB.Engine.EngineSettings)">
@@ -3992,16 +3993,16 @@
         </member>
         <member name="T:LiteDB.Engine.MemoryCache">
             <summary>
-            Manage linear memory segments to avoid re-create array buffer in heap memory
-            Do not share same memory store with diferent files
+            Manage linear memory segments to avoid re-creating array buffer in heap memory
+            Do not share same memory store with different files
             [ThreadSafe]
             </summary>
         </member>
         <member name="F:LiteDB.Engine.MemoryCache._free">
             <summary>
             Contains free ready-to-use pages in memory
-            - All pages here MUST be ShareCounter = 0
-            - All pages here MUST be Position = MaxValue
+            - All pages here MUST have ShareCounter = 0
+            - All pages here MUST have Position = MaxValue
             </summary>
         </member>
         <member name="F:LiteDB.Engine.MemoryCache._readable">
@@ -4010,13 +4011,13 @@
             - MUST have defined Origin and Position
             - Contains only 1 instance per Position/Origin
             - Contains only pages with ShareCounter >= 0
-            *  = 0 - Page are avaiable but are not using by anyone (can be moved into _free list in next Extend())
-            * >= 1 - Page are in used by 1 or more threads. Page must run "Release" when finish use
+            *  = 0 - Page is available but is not in use by anyone (can be moved into _free list on next Extend())
+            * >= 1 - Page is in use by 1 or more threads. Page must run "Release" when finished using
             </summary>
         </member>
         <member name="F:LiteDB.Engine.MemoryCache._extends">
             <summary>
-            Get how many extends was made in this store
+            Get how many extends were made in this store
             </summary>
         </member>
         <member name="F:LiteDB.Engine.MemoryCache._segmentSizes">
@@ -4026,7 +4027,7 @@
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.GetReadablePage(System.Int64,LiteDB.Engine.FileOrigin,System.Action{System.Int64,LiteDB.BufferSlice})">
             <summary>
-            Get page from clean cache (readable). If page not exits, create this new page and load data using factory fn
+            Get page from clean cache (readable). If page doesn't exist, create this new page and load data using factory fn
             </summary>
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.GetReadableKey(System.Int64,LiteDB.Engine.FileOrigin)">
@@ -4052,26 +4053,26 @@
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.TryMoveToReadable(LiteDB.Engine.PageBuffer)">
             <summary>
-            Try move this page to readable list (if not alrady in readable list)
-            Returns true if was moved
+            Try to move this page to readable list (if not already in readable list)
+            Returns true if it was moved
             </summary>
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.MoveToReadable(LiteDB.Engine.PageBuffer)">
             <summary>
-            Move a writable page to readable list - if already exisits, override content
-            Used after write operation that must mark page as readable becase page content was changed
+            Move a writable page to readable list - if already exists, override content
+            Used after write operation that must mark page as readable because page content was changed
             This method runs BEFORE send to write disk queue - but new page request must read this new content
             Returns readable page
             </summary>
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.DiscardPage(LiteDB.Engine.PageBuffer)">
             <summary>
-            Complete discard a writable page - clean content and move to free list
+            Completely discard a writable page - clean content and move to free list
             </summary>
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.GetFreePage">
             <summary>
-            Get a clean, re-usable page from store. If store are empty, can extend buffer segments
+            Get a clean, re-usable page from store. Can extend buffer segments if store is empty
             </summary>
         </member>
         <member name="M:LiteDB.Engine.MemoryCache.Extend">
@@ -4086,12 +4087,12 @@
         </member>
         <member name="P:LiteDB.Engine.MemoryCache.FreePages">
             <summary>
-            Return how many pages are available completed free
+            Return how many pages are available (completely free)
             </summary>
         </member>
         <member name="P:LiteDB.Engine.MemoryCache.ExtendSegments">
             <summary>
-            Return how many segments already loaded in memory
+            Return how many segments are already loaded in memory
             </summary>
         </member>
         <member name="P:LiteDB.Engine.MemoryCache.ExtendPages">
@@ -4112,7 +4113,7 @@
         <member name="M:LiteDB.Engine.MemoryCache.Clear">
             <summary>
             Clean all cache memory - moving back all readable pages into free list
-            This command must be called inside a exclusive lock
+            This command must be called inside an exclusive lock
             </summary>
         </member>
         <member name="T:LiteDB.Engine.BufferPool">
@@ -4336,7 +4337,7 @@
         </member>
         <member name="M:LiteDB.Engine.FileStreamFactory.GetLength">
             <summary>
-            Get file length using FileInfo
+            Get file length using FileInfo. Crop file length if not length % PAGE_SIZE
             </summary>
         </member>
         <member name="M:LiteDB.Engine.FileStreamFactory.Exists">
@@ -5208,14 +5209,16 @@
         </member>
         <member name="M:LiteDB.Engine.DataPage.FreeIndexSlot(System.Int32)">
             <summary>
-            Get page index slot on FreeDataPageID
+            Returns the slot the page should be in, given the <paramref name="freeBytes"/> it has
             </summary>
+            <returns>A slot number between 0 and 4</returns>
         </member>
         <member name="M:LiteDB.Engine.DataPage.GetMinimumIndexSlot(System.Int32)">
             <summary>
-            Get minimum slot with space enough for your data content
-            Returns -1 if no space guaranteed (more than 90%)
+            Returns the slot where there is a page with enough space for <paramref name="length"/> bytes of data.
+            Returns -1 if no space guaranteed (more than 90% of a DataPage net size)
             </summary>
+            <returns>A slot number between -1 and 3</returns>
         </member>
         <member name="T:LiteDB.Engine.HeaderPage">
             <summary>
@@ -6783,11 +6786,6 @@
         <member name="M:LiteDB.Collation.Compare(System.String,System.String)">
             <summary>
             Compare 2 string values using current culture/compare options
-            </summary>
-        </member>
-        <member name="M:LiteDB.Collation.Compare(System.Char,System.Char)">
-            <summary>
-            Compare 2 chars values using current culture/compare options
             </summary>
         </member>
         <member name="T:LiteDB.Constants">

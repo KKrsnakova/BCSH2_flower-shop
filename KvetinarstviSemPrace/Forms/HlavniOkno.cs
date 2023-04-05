@@ -26,6 +26,7 @@ namespace KvetinarstviSemPrace
 
         public HlavniOkno()
         {
+            
 
             Repo repo = new();
 
@@ -83,12 +84,7 @@ namespace KvetinarstviSemPrace
         private void BtnObjednavky_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormObjednavky(), sender);
-        }
-
-        private void BtnProdej_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.FormProdej(), sender);
-        }
+        }    
 
         private void BtnZakaznici_Click(object sender, EventArgs e)
         {
@@ -142,12 +138,16 @@ namespace KvetinarstviSemPrace
 
         private void HlavniOkno_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Uložit záznamy?", "Potvrzení zavření", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                UlozitZaznamy();
-                Close();
-            }
+            //DialogResult result = MessageBox.Show("Uložit záznamy?", "Potvrzení zavření", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (result == DialogResult.Yes)
+            //{
+            //    UlozitZaznamy();
+            //    Close();
+            //}
+            //else
+            //{
+            //    Close();
+            //}
         }
     }
 }

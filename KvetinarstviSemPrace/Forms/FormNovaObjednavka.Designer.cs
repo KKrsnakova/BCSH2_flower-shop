@@ -42,10 +42,13 @@
             this.tbJmenoPrijmeni = new System.Windows.Forms.TextBox();
             this.lvObjednavka = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cenaPolozky = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPridatDoSeznamu = new System.Windows.Forms.Button();
             this.lbObjednavka = new System.Windows.Forms.Label();
             this.cbJmenoPrijmeni = new System.Windows.Forms.ComboBox();
             this.tbAdresa = new System.Windows.Forms.TextBox();
+            this.btnOdeberZeSeznamu = new System.Windows.Forms.Button();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // panelMain
@@ -106,7 +109,7 @@
             this.tbCena.Name = "tbCena";
             this.tbCena.Size = new System.Drawing.Size(120, 20);
             this.tbCena.TabIndex = 13;
-            this.tbCena.Text = "50";
+            this.tbCena.Text = "0";
             // 
             // lbTelCislo
             // 
@@ -159,7 +162,9 @@
             // lvObjednavka
             // 
             this.lvObjednavka.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.name});
+            this.id,
+            this.name,
+            this.cenaPolozky});
             this.lvObjednavka.HideSelection = false;
             this.lvObjednavka.Location = new System.Drawing.Point(99, 260);
             this.lvObjednavka.Name = "lvObjednavka";
@@ -170,8 +175,13 @@
             // 
             // name
             // 
-            this.name.Text = "Name";
+            this.name.Text = "Název";
             this.name.Width = 241;
+            // 
+            // cenaPolozky
+            // 
+            this.cenaPolozky.Text = "Cena";
+            this.cenaPolozky.Width = 149;
             // 
             // btnPridatDoSeznamu
             // 
@@ -208,12 +218,28 @@
             this.tbAdresa.Size = new System.Drawing.Size(500, 20);
             this.tbAdresa.TabIndex = 39;
             // 
+            // btnOdeberZeSeznamu
+            // 
+            this.btnOdeberZeSeznamu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdeberZeSeznamu.Location = new System.Drawing.Point(703, 326);
+            this.btnOdeberZeSeznamu.Name = "btnOdeberZeSeznamu";
+            this.btnOdeberZeSeznamu.Size = new System.Drawing.Size(42, 37);
+            this.btnOdeberZeSeznamu.TabIndex = 40;
+            this.btnOdeberZeSeznamu.Text = "-";
+            this.btnOdeberZeSeznamu.UseVisualStyleBackColor = true;
+            this.btnOdeberZeSeznamu.Click += new System.EventHandler(this.btnOdeberZeSeznamu_Click);
+            // 
+            // id
+            // 
+            this.id.Text = "Id";
+            // 
             // FormNovaObjednavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(239)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(840, 667);
+            this.Controls.Add(this.btnOdeberZeSeznamu);
             this.Controls.Add(this.tbAdresa);
             this.Controls.Add(this.cbJmenoPrijmeni);
             this.Controls.Add(this.lbObjednavka);
@@ -258,5 +284,8 @@
         private System.Windows.Forms.ComboBox cbJmenoPrijmeni;
         private System.Windows.Forms.TextBox tbAdresa;
         private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader cenaPolozky;
+        private System.Windows.Forms.Button btnOdeberZeSeznamu;
+        private System.Windows.Forms.ColumnHeader id;
     }
 }

@@ -12,27 +12,67 @@ namespace KvetinarstviSemPrace.Forms
 {
     public partial class FormPridejZakaznika : Form
     {
-        public FormPridejZakaznika()
+        Zakaznik zakaznikEdit;
+        public FormPridejZakaznika(Zakaznik zak)
         {
             InitializeComponent();
+            zakaznikEdit = zak;
+            if (zakaznikEdit != null)
+            {
+                tbJmeno.Text = zak.Jmeno;
+                tbPrijmeni.Text = zak.Prijemni;
+                tbAdresa.Text = zak.Adresa;
+                tbTelCislo.Text = zak.TelCislo.ToString();
+                tbEmail.Text = zak.Email;
+
+            }
         }
 
         private void BtnPridej_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("pocet  " + HlavniOkno.zaznamy.DejSeznamZakaznici().Count);
+            if (zakaznikEdit == null)
+            {
+                if (!String.IsNullOrEmpty(tbJmeno.Text) &&
+                    !String.IsNullOrEmpty(tbPrijmeni.Text) &&
+                    !String.IsNullOrEmpty(tbAdresa.Text) &&
+                    !String.IsNullOrEmpty(tbEmail.Text) &&
+                    long.TryParse(tbTelCislo.Text, out long telCislo))
+                {
 
-            Console.WriteLine(":::");
-            string jmeno = tbJmeno.Text;
-            string prijmeni = tbPrijmeni.Text;
-            string adresa = tbAdresa.Text;
-            long telCislo = long.Parse(tbTelCislo.Text);
-            string email = tbEmail.Text;
-            int id = DejIdZakaznik();
-            Zakaznik zakaznik = new(id, jmeno, prijmeni, adresa, telCislo, email);
+                    Zakaznik zakaznik = new(DejIdZakaznik(), tbJmeno.Text
+                        , tbPrijmeni.Text, tbAdresa.Text, telCislo, tbEmail.Text);
 
-            HlavniOkno.zaznamy.PridejZakaznika(zakaznik);
+                    HlavniOkno.zaznamy.PridejZakaznika(zakaznik);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Chybně zadáno", "Chyba");
+                }
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(tbJmeno.Text) &&
+                    !String.IsNullOrEmpty(tbPrijmeni.Text) &&
+                    !String.IsNullOrEmpty(tbAdresa.Text) &&
+                    !String.IsNullOrEmpty(tbEmail.Text) &&
+                    long.TryParse(tbTelCislo.Text, out long telCislo))
+                {
+                    zakaznikEdit.Jmeno= tbJmeno.Text;
+                    zakaznikEdit.Prijemni= tbPrijmeni.Text;
+                    zakaznikEdit.Adresa = tbAdresa.Text;
+                    zakaznikEdit.Email = tbEmail.Text;
+                    zakaznikEdit.TelCislo = telCislo;
+                    HlavniOkno.zaznamy.EditZakaznika(zakaznikEdit.Id, zakaznikEdit);
+                }
+                else
+                {
+                    MessageBox.Show("Chybně zadáno", "Chyba");
+                }
+                Close();
+            }
 
-            Close();
+
         }
 
         private int DejIdZakaznik()

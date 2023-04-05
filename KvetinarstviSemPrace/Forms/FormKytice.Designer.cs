@@ -33,11 +33,11 @@
             this.btnOdebrat = new System.Windows.Forms.Button();
             this.btnPridet = new System.Windows.Forms.Button();
             this.lvKytice = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cena = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pocetKvetin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,11 @@
             this.lvKytice.TabIndex = 2;
             this.lvKytice.UseCompatibleStateImageBehavior = false;
             this.lvKytice.View = System.Windows.Forms.View.Details;
+            this.lvKytice.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvKytice_ColumnClick);
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
             // 
             // nazev
             // 
@@ -142,10 +147,6 @@
             // 
             this.popis.Text = "Popis";
             this.popis.Width = 244;
-            // 
-            // id
-            // 
-            this.id.Text = "ID";
             // 
             // FormKytice
             // 
