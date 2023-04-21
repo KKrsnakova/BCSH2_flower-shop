@@ -25,6 +25,7 @@ namespace KvetinarstviSemPrace.Forms
 
             InitializeComponent();
             pridano = false;
+
             cbJmenoPrijmeni.DataSource = HlavniOkno.zaznamy.DejSeznamZakaznici();
 
             zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
@@ -86,13 +87,11 @@ namespace KvetinarstviSemPrace.Forms
 
         private void CbJmenoPrijmeni_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             zakaznik = cbJmenoPrijmeni.SelectedItem as Zakaznik;
             tbJmenoPrijmeni.Text = zakaznik.Jmeno + " " + zakaznik.Prijemni;
             tbAdresa.Text = zakaznik.Adresa;
             tbTelCislo.Text = zakaznik.TelCislo.ToString();
             tbEmail.Text = zakaznik.Email.ToString();
-
         }
 
         private void BtnPridej_Click(object sender, EventArgs e)

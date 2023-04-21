@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormZbozi));
             this.lvZbozi = new System.Windows.Forms.ListView();
             this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,14 +47,15 @@
             this.specifikace,
             this.cena,
             this.popis});
+            this.lvZbozi.FullRowSelect = true;
             this.lvZbozi.HideSelection = false;
             this.lvZbozi.Location = new System.Drawing.Point(46, 102);
             this.lvZbozi.Name = "lvZbozi";
+            this.lvZbozi.RightToLeftLayout = true;
             this.lvZbozi.Size = new System.Drawing.Size(684, 364);
             this.lvZbozi.TabIndex = 0;
             this.lvZbozi.UseCompatibleStateImageBehavior = false;
             this.lvZbozi.View = System.Windows.Forms.View.Details;
-            this.lvZbozi.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LvZbozi_ColumnClick);
             this.lvZbozi.SelectedIndexChanged += new System.EventHandler(this.LvZbozi_SelectedIndexChanged);
             // 
             // id
@@ -109,6 +111,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.lvZbozi);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormZbozi";
             this.Text = "Zboží";
             this.ResumeLayout(false);

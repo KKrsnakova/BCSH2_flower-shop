@@ -116,6 +116,7 @@
             this.pocetKvetin,
             this.popis});
             this.lvKytice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvKytice.FullRowSelect = true;
             this.lvKytice.HideSelection = false;
             this.lvKytice.Location = new System.Drawing.Point(0, 0);
             this.lvKytice.Name = "lvKytice";
@@ -123,7 +124,6 @@
             this.lvKytice.TabIndex = 2;
             this.lvKytice.UseCompatibleStateImageBehavior = false;
             this.lvKytice.View = System.Windows.Forms.View.Details;
-            this.lvKytice.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvKytice_ColumnClick);
             // 
             // id
             // 

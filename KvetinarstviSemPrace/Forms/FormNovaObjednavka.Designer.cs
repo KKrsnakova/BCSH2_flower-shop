@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNovaObjednavka));
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnKonec = new System.Windows.Forms.Button();
             this.lbCena = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.tbJmenoPrijmeni = new System.Windows.Forms.TextBox();
             this.lvObjednavka = new System.Windows.Forms.ListView();
+            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cenaPolozky = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPridatDoSeznamu = new System.Windows.Forms.Button();
@@ -48,7 +50,6 @@
             this.cbJmenoPrijmeni = new System.Windows.Forms.ComboBox();
             this.tbAdresa = new System.Windows.Forms.TextBox();
             this.btnOdeberZeSeznamu = new System.Windows.Forms.Button();
-            this.id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // panelMain
@@ -165,6 +166,7 @@
             this.id,
             this.name,
             this.cenaPolozky});
+            this.lvObjednavka.FullRowSelect = true;
             this.lvObjednavka.HideSelection = false;
             this.lvObjednavka.Location = new System.Drawing.Point(99, 260);
             this.lvObjednavka.Name = "lvObjednavka";
@@ -172,6 +174,10 @@
             this.lvObjednavka.TabIndex = 35;
             this.lvObjednavka.UseCompatibleStateImageBehavior = false;
             this.lvObjednavka.View = System.Windows.Forms.View.Details;
+            // 
+            // id
+            // 
+            this.id.Text = "Id";
             // 
             // name
             // 
@@ -229,10 +235,6 @@
             this.btnOdeberZeSeznamu.UseVisualStyleBackColor = true;
             this.btnOdeberZeSeznamu.Click += new System.EventHandler(this.btnOdeberZeSeznamu_Click);
             // 
-            // id
-            // 
-            this.id.Text = "Id";
-            // 
             // FormNovaObjednavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +259,7 @@
             this.Controls.Add(this.lbZakaznik);
             this.Controls.Add(this.btnPridej);
             this.Controls.Add(this.tbCena);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNovaObjednavka";
             this.Text = "Nová objednávka";
             this.ResumeLayout(false);

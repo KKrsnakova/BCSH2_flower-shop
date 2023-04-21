@@ -116,6 +116,7 @@
             this.cena,
             this.popis});
             this.lvKvetiny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvKvetiny.FullRowSelect = true;
             this.lvKvetiny.HideSelection = false;
             this.lvKvetiny.Location = new System.Drawing.Point(0, 0);
             this.lvKvetiny.Name = "lvKvetiny";
@@ -123,7 +124,6 @@
             this.lvKvetiny.TabIndex = 1;
             this.lvKvetiny.UseCompatibleStateImageBehavior = false;
             this.lvKvetiny.View = System.Windows.Forms.View.Details;
-            this.lvKvetiny.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvKvetiny_ColumnClick);
             // 
             // id
             // 

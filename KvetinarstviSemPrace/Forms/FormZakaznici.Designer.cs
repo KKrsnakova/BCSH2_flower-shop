@@ -52,6 +52,7 @@
             this.telCislo,
             this.email});
             this.lvZakaznici.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvZakaznici.FullRowSelect = true;
             this.lvZakaznici.HideSelection = false;
             this.lvZakaznici.Location = new System.Drawing.Point(0, 0);
             this.lvZakaznici.Name = "lvZakaznici";
@@ -59,7 +60,6 @@
             this.lvZakaznici.TabIndex = 2;
             this.lvZakaznici.UseCompatibleStateImageBehavior = false;
             this.lvZakaznici.View = System.Windows.Forms.View.Details;
-            this.lvZakaznici.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LvZakaznici_ColumnClick);
             // 
             // id
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HlavniOkno));
             this.logoPanel = new System.Windows.Forms.Panel();
             this.lbCas = new System.Windows.Forms.Label();
             this.lbDatum = new System.Windows.Forms.Label();
@@ -254,6 +255,7 @@
             this.Controls.Add(this.hlavniPanel);
             this.Controls.Add(this.titulPanel);
             this.Controls.Add(this.menuPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HlavniOkno";
             this.Text = "Úvod";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HlavniOkno_FormClosing);

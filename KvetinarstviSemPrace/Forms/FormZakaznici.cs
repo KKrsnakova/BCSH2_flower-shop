@@ -85,19 +85,5 @@ namespace KvetinarstviSemPrace.Forms
             }
         }
 
-        private void LvZakaznici_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            ListView lv = sender as ListView;
-            if (lv.Sorting == SortOrder.Ascending)
-            {
-                lv.Sorting = SortOrder.Descending;
-            }
-            else
-            {
-                lv.Sorting = SortOrder.Ascending;
-            }
-            lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
-            lv.Sort();
-        }
     }
 }

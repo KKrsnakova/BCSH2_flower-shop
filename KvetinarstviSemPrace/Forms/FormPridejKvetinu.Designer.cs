@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPridejKvetinu));
             this.tbNazev = new System.Windows.Forms.TextBox();
             this.tbCena = new System.Windows.Forms.TextBox();
             this.tbPopis = new System.Windows.Forms.TextBox();
@@ -162,6 +163,7 @@
             this.Controls.Add(this.tbPopis);
             this.Controls.Add(this.tbCena);
             this.Controls.Add(this.tbNazev);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPridejKvetinu";
             this.Text = "Nová květina";
             this.ResumeLayout(false);

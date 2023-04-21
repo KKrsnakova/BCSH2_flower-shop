@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPridejZakaznika));
             this.btnKonec = new System.Windows.Forms.Button();
             this.lbAdresa = new System.Windows.Forms.Label();
             this.lbJmeno = new System.Windows.Forms.Label();
@@ -186,6 +187,7 @@
             this.Controls.Add(this.btnPridej);
             this.Controls.Add(this.tbAdresa);
             this.Controls.Add(this.tbJmeno);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPridejZakaznika";
             this.Text = "Nový zákazník";
             this.ResumeLayout(false);

@@ -14,7 +14,6 @@ namespace KvetinarstviSemPrace
         public float CenaObjednavky { get; set; }
         public DateTime DatumVytvoreni { get; set; }
         public ObservableCollection<Zbozi> SeznamZbozi { get; set; }
-
         public bool Splneno { get; set; }
         public DateTime? DatumSplneni { get; set; }
 

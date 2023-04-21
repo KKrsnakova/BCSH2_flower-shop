@@ -85,31 +85,5 @@ namespace KvetinarstviSemPrace.Forms
             }
         }
 
-        private void lvKvetiny_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-
-            
-                // Získáme ListView
-                ListView lv = sender as ListView;
-
-                // Změníme způsob řazení podle hodnot v prvním sloupci
-                if (lv.Sorting == SortOrder.Ascending)
-                {
-                    lv.Sorting = SortOrder.Descending;
-                }
-                else
-                {
-                    lv.Sorting = SortOrder.Ascending;
-                }
-
-                // Nastavíme sloupec, podle kterého se bude řadit
-                lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
-
-                // Zavoláme metodu Sort, která se postará o samotné řazení
-                lv.Sort();
-
-            
-        }
-
     }
 }

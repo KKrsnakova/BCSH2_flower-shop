@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPridejKytici));
             this.btnKonec = new System.Windows.Forms.Button();
             this.lbPopis = new System.Windows.Forms.Label();
             this.lbCena = new System.Windows.Forms.Label();
@@ -162,8 +163,9 @@
             this.Controls.Add(this.tbPopis);
             this.Controls.Add(this.tbCena);
             this.Controls.Add(this.tbNazev);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPridejKytici";
-            this.Text = "FormPridejKytici";
+            this.Text = "Přidej kytici";
             ((System.ComponentModel.ISupportInitialize)(this.numPocet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

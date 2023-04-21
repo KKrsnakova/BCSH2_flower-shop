@@ -31,10 +31,12 @@ namespace KvetinarstviSemPrace
             return Jmeno.ToString() + " " + Prijemni.ToString() + " " + Adresa.ToString() + " " + TelCislo.ToString() + " " + Email.ToString();
         }
 
-        public static explicit operator Zakaznik(int v)
+        public string ToStringJmenoPrijmeni()
         {
-            throw new NotImplementedException();
+            return Jmeno.ToString() + " " + Prijemni.ToString();
         }
+
+
     }
 
 }

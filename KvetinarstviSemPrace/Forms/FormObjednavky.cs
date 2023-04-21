@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KvetinarstviSemPrace.Forms
 {
     public partial class FormObjednavky : Form
     {
         int selectedId;
+        Zakaznik vybranyZakaznik;
         public FormObjednavky()
         {
             InitializeComponent();
@@ -21,6 +23,10 @@ namespace KvetinarstviSemPrace.Forms
             lvObjednavky.Columns[0].TextAlign = HorizontalAlignment.Center;
             lvObjednavky.Columns[4].TextAlign = HorizontalAlignment.Center;
             lvObjednavky.Items.Clear();
+
+
+            CbZakaznik.DataSource = HlavniOkno.zaznamy.DejSeznamZakaznici();
+            CbFiltr.Checked = false;
             Nacti(lvObjednavky);
 
         }
@@ -30,11 +36,11 @@ namespace KvetinarstviSemPrace.Forms
             Form detailForm = new FormNovaObjednavka(null);
             detailForm.ShowDialog();
             lvObjednavky.Items.Clear();
-
+            CbFiltr.Checked = false;
             Nacti(lvObjednavky);
         }
 
-        public static void Nacti(ListView lv)
+        public static void Nacti(System.Windows.Forms.ListView lv)
         {
             lv.Items.Clear();
             foreach (Objednavka item in HlavniOkno.zaznamy.DejSeznamObjednavek())
@@ -51,6 +57,41 @@ namespace KvetinarstviSemPrace.Forms
             }
         }
 
+        private void NactiSFiltrem(int idZakaznika, bool jizSplneno)
+        {
+            lvObjednavky.Items.Clear();
+            foreach (Objednavka item in HlavniOkno.zaznamy.DejSeznamObjednavek())
+            {
+                if (item.ZakaznikID.Equals(idZakaznika) && jizSplneno && item.Splneno)
+                {
+                    Zakaznik zakaznik = HlavniOkno.zaznamy.DejZakaznikaPodleId(item.ZakaznikID);
+                    string splneno = "\u2717";
+                    if (item.Splneno)
+                    {
+                        splneno = "\u2713"; ;
+                    }
+
+                    string[] zaznam = { zakaznik.Jmeno + " " + zakaznik.Prijemni, item.CenaObjednavky + "", item.DatumVytvoreni + "", splneno, item.DatumSplneni + "" };
+                    lvObjednavky.Items.Add(item.Id + "").SubItems.AddRange(zaznam);
+                } else 
+                {
+                    if (item.ZakaznikID == idZakaznika && !jizSplneno)
+                    {
+                        Zakaznik zakaznik = HlavniOkno.zaznamy.DejZakaznikaPodleId(item.ZakaznikID);
+                        string splneno = "\u2717";
+                        if (item.Splneno)
+                        {
+                            splneno = "\u2713"; ;
+                        }
+
+                        string[] zaznam = { zakaznik.Jmeno + " " + zakaznik.Prijemni, item.CenaObjednavky + "", item.DatumVytvoreni + "", splneno, item.DatumSplneni + "" };
+                        lvObjednavky.Items.Add(item.Id + "").SubItems.AddRange(zaznam);
+                    }
+                }
+
+            }
+        }
+
         private void BtnOdebrat_Click(object sender, EventArgs e)
         {
             if (lvObjednavky.SelectedItems.Count > 0)
@@ -59,6 +100,7 @@ namespace KvetinarstviSemPrace.Forms
                 Objednavka objednavka = HlavniOkno.zaznamy.DejSeznamObjednavek().FirstOrDefault(objekt => objekt.Id == selectedId);
 
                 HlavniOkno.zaznamy.OdeberObjednavku(objednavka);
+                CbFiltr.Checked = false;
                 lvObjednavky.Items.Clear();
                 Nacti(lvObjednavky);
             }
@@ -94,21 +136,6 @@ namespace KvetinarstviSemPrace.Forms
             }
         }
 
-        private void LvObjednavky_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            ListView lv = sender as ListView;
-            if (lv.Sorting == SortOrder.Ascending)
-            {
-                lv.Sorting = SortOrder.Descending;
-            }
-            else
-            {
-                lv.Sorting = SortOrder.Ascending;
-            }
-            lv.ListViewItemSorter = new ListViewItemComparer(e.Column, lv.Sorting);
-            lv.Sort();
-        }
-
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             if (lvObjednavky.SelectedItems.Count > 0)
@@ -134,6 +161,49 @@ namespace KvetinarstviSemPrace.Forms
             else
             {
                 MessageBox.Show("Není vybráno", "Chyba");
+            }
+        }
+
+        private void CbZakaznik_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (CbFiltr.Checked && ChbSplneno.Checked)
+            {
+                vybranyZakaznik = CbZakaznik.SelectedItem as Zakaznik;
+                int idZakaznika = vybranyZakaznik.Id;
+                NactiSFiltrem(idZakaznika, ChbSplneno.Checked);
+            } else
+            {
+                Nacti(lvObjednavky);
+            }
+        }
+
+        private void CbFiltr_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CbFiltr.Checked)
+            {
+                vybranyZakaznik = CbZakaznik.SelectedItem as Zakaznik;
+                int idZakaznika = vybranyZakaznik.Id;
+                NactiSFiltrem(idZakaznika, ChbSplneno.Checked);
+               
+            }
+            else
+            {
+                Nacti(lvObjednavky);
+            }
+        }
+
+        private void ChbSplneno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CbFiltr.Checked && CbFiltr.Checked)
+            {
+                vybranyZakaznik = CbZakaznik.SelectedItem as Zakaznik;
+                int idZakaznika = vybranyZakaznik.Id;
+                NactiSFiltrem(idZakaznika, ChbSplneno.Checked);
+
+            }
+            else
+            {
+                Nacti(lvObjednavky);
             }
         }
     }
